@@ -4,21 +4,21 @@ const client = new Discord.Client()
 
 
 var prefix = '/'
-client.login("")
+client.login(process.env.TOKEN)
 
 client.on('ready', function(){
-     console.log("je suis connecté")
+     console.log("je suis connectÃ©")
 });
 
 client.on('ready', () => {
 	var generalChannel = client.channels.get("481035906732654605")
-    generalChannel.send("@everyone Bonjour je suis maintenant connecté")  
+    generalChannel.send("@everyone Bonjour je suis maintenant connectÃ©")  
 })
 
 client.on('message' , function(message){
               if(message.content === (prefix + "stop")){
 			 message.channel.send('au revoir... :sleeping: ')
-             console.log("je me déconnecte")
+             console.log("je me dÃ©connecte")
              message.delete().then(client.destroy())
               }
 });
