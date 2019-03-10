@@ -7,17 +7,13 @@ var prefix = '/'
 client.login(process.env.TOKEN)
 
 client.on('ready', function(){
-     console.log("je suis connecté")
+     console.log("je suis connectÃ©")
 });
-
-client.on('ready', function(message){
-    message.channel.send("@everyone Bonjour je suis maintenant connecté")  
-})
 
 client.on('message' , function(message){
               if(message.content === (prefix + "stop")){
 			 message.channel.send('au revoir... :sleeping: ')
-             console.log("je me déconnecte")
+             console.log("je me dÃ©connecte")
              message.delete().then(client.destroy())
               }
 });
