@@ -31,13 +31,12 @@ client.on('ready', () => {
         console.log(" - " + guild.name)
     })
 })
-client.on('ready', function(message){
+client.on('message', function(message){
 	if(message.content === (prefix + 'servers')){
     	message.channel.send("Servers:")
     	client.guilds.forEach((guild) => {
         console.log(" - " + guild.name)
-        })
-    })	 
+        }})	 
 })
 client.on('message', function(message){
 		if(message.content === ('Trol')){
