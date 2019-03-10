@@ -7,24 +7,23 @@ var prefix = '/'
 client.login(process.env.TOKEN)
 
 client.on('ready', function(){
-     console.log("je suis connectÃ©")
+     console.log("je suis connecté")
 });
 
-client.on('ready', () => {
-	var generalChannel = client.channels.get("481035906732654605")
-    generalChannel.send("@everyone Bonjour je suis maintenant connectÃ©")  
+client.on('ready', function(message){
+    message.channel.send("@everyone Bonjour je suis maintenant connecté")  
 })
 
 client.on('message' , function(message){
               if(message.content === (prefix + "stop")){
 			 message.channel.send('au revoir... :sleeping: ')
-             console.log("je me dÃ©connecte")
+             console.log("je me déconnecte")
              message.delete().then(client.destroy())
               }
 });
 
 client.on('message', function(message){
-	if(message.content === (prefix + 'ping')){
+	if(message.content === ('ping')){
     message.channel.send('Pong!');
 	}
 })
@@ -35,6 +34,14 @@ client.on('ready', () => {
     client.guilds.forEach((guild) => {
         console.log(" - " + guild.name)
     })
+})
+client.on('ready', function(message){
+	if(message.content === (prefix + 'servers')){
+    	message.channel.send("Servers:")
+    	client.guilds.forEach((guild) => {
+        console.log(" - " + guild.name)
+        })
+    })	 
 })
 client.on('message', function(message){
 		if(message.content === ('Trol')){
@@ -49,3 +56,5 @@ client.on('message', function(message){
 		message.channel.send(webAttachment)
 		}
 })
+
+
