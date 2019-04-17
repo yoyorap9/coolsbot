@@ -33,14 +33,14 @@ client.on('ready', () => {
 })
 	
 client.on('message', function(message){
-		if(message.content === ('Trol')){
+		if(message.content === ('Trol') || ('trol')){
     	const webAttachment = new Discord.Attachment('https://static.anidub.com/blog/2011/04/49811.jpg')
 		message.channel.send(webAttachment)
 		}
 })
 
 client.on('message', function(message){
-		if(message.content === ('Lol')){
+		if(message.content === ('Lol') || ('lol')){
     	const webAttachment = new Discord.Attachment('http://gif-finder.com/wp-content/uploads/2015/05/LOL-Trol-Face.gif')
 		message.channel.send(webAttachment)
 		}
